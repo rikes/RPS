@@ -1,0 +1,16 @@
+language: java
+
+jdk:
+ - oraclejdk8 
+  
+branches:
+  only:
+    - version1
+    - master
+addons:
+  sonarqube: true
+  
+script:
+ - mvn test
+ - mvn clean install sonar:sonar
+ - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
