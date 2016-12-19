@@ -9,7 +9,7 @@
 	<properties>
 		<!-- Sonar -->
 		<sonar.host.url>https://sonarqube.com</sonar.host.url>
-		<sonar.login>61c86717810eeaa32e7447e0c922d648f7e3ae35</sonar.login>
+		<sonar.login>6d7e4d4fc7c45a4fe067a2186cbded3ceed55bb4</sonar.login>
 		<!-- Codificacao -->
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>

@@ -11,6 +11,7 @@ script:
 - mvn test
 - mvn clean install sonar:sonar
 - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+- mvn package -Popenshift
 deploy:
   provider: openshift
   user: henricke.ss@gmail.com
@@ -20,7 +21,4 @@ deploy:
   domain: receitas
   on:
     repo: rikes/RPS
- - mvn test
- - mvn clean install sonar:sonar
- - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
- - mvn package -Popenshift
+ 
