@@ -11,14 +11,4 @@ script:
 - mvn test
 - mvn clean install sonar:sonar
 - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
-- mvn package -Popenshift
-deploy:
-  provider: openshift
-  user: henricke.ss@gmail.com
-  password:
-    secure: LbLp+9L9TIptaSRzY9BioAA/I5nwRJypwaefe3vBkraE1sGTVGQF2y8p/gbpR0SwjHI+Ve3Gu3eco2XWzFsenXC5427U8uMRd4HPwUEFwjky3jVN2DHdmVbF+dB5MUAFQlh/7E9IcnU1et5kz66tu0+Fye6MHKSKgbx1YQNPec61bFmz281Vbo5UchUcnDZeN95QhykbwxkJGGKe+DkK0FARMT6NDuvz0Fy8lH9E6/4kmZqvHhsW5Scv7USWKUa4W2gk+7T+CewWxCaJyM6l3wU51fUJm1ieMNkZyJajpIMes+FzNoAoB30Qjcs9hTvU4HRhP5IoEYfdrE1uD/QxvO6G4AIAl9dWf7AqCbWPA6IqjiK346bd3DqgGrS9jCqAt3DE9C+wX2N3INYsZ+c0zeiAVG9Gyc9uHG8pIopHORQ8xNu6Rsx+b3Lr+BkxICSnlMMtu1XPoljhANSwvz3jv/fXDj50ts3mTyAaeMJLTNHpcMju1UAQGQIXRNr1zSJyq1vLG1/r68+zNidSR7hb80JQxSy6rHDYTS05eKix0RK/9lIHvOmZfuFGZoFaGRpobB7jVjVaRqRK1Du/E5qE10tkkhJUtfLxQM2f/WycYbxsFN/df5I6DuLjbHTDE/QjC0CUxnQhSC45lxPAnLc8qRTkcqP6IL2IHFTllLHCfZI=
-  app: rps
-  domain: receitas
-  on:
-    repo: rikes/RPS
- 
+
