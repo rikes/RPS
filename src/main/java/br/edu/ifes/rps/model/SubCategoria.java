@@ -36,8 +36,8 @@ public class SubCategoria implements Serializable{
 	 * Eager pq preciso carregar tbm os dados do pai(categoria) de uma vez 
 	 */	
 	
-	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name="IdCategoria", referencedColumnName="IdCategoria")
+	@ManyToOne(fetch = FetchType.EAGER)
 	private Categoria categoria;
 
 
@@ -58,5 +58,15 @@ public class SubCategoria implements Serializable{
 
 	public void setSubCategoria(String subCategoria) {
 		this.subCategoria = subCategoria;
+	}
+
+
+	public Categoria getCategoria() {
+		return categoria;
+	}
+
+
+	public void setCategoria(Categoria categoria) {
+		this.categoria = categoria;
 	}
 }

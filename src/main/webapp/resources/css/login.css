@@ -1,0 +1,40 @@
+/* Bordas */
+form {
+    border: 15px solid #f1f1f1;
+}
+
+/* Estilo dos inputs */
+input[type=text], input[type=password] {
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+
+/* Adicione estilo do botão de login */
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 50%;
+}
+
+/* Estilo do botão de cancelar */
+.cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #f44336;
+}
+/* Classe referente a div principal */
+.container {
+    padding: 16px;
+}
+
+/* Estilo do "Esqueceu a senha"*/
+span.psw {
+    float: right;
+    padding-top: 16px;
+}

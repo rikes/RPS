@@ -1,0 +1,44 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	template="/templates/default/main.xhtml">
+	<ui:define name="content">
+		
+		
+		<h:form id="Listagem">
+			<p:dataScroller value="#{inicioBean.receitasFind}" var="receita" chunkSize="10">
+				<f:facet name="header"> 
+					Suas receitas
+				 </f:facet>
+
+				<f:facet name="loader">
+					<p:commandButton type="button" value="Mais"
+						icon="ui-icon-circle-triangle-s" />
+				</f:facet>
+
+				<h:panelGrid columns="2"  columnClasses="logo,detail" >
+					
+					<h:commandLink action="#{inicioBean.detalhes(receita)}" >
+						<p:graphicImage value="#{receita.linkImagem}" style="width:100px;height:100px"/>
+					</h:commandLink>
+					<p:outputPanel>
+					
+						<h:panelGrid columns="2" cellpadding="5">
+							<h:outputText value="Nome: " />
+							<h:outputText value="#{receita.nomeReceita}" style="font-weight: bold" />
+
+							<h:outputText value="Categoria: " />
+							<h:outputText value="#{receita.subcategoria.categoria.categoria}" style="font-weight: bold" />
+
+							<h:outputText value="SubCategoria: " />
+							<h:outputText value="#{receita.subcategoria.subCategoria}" style="font-weight: bold" />
+						</h:panelGrid>
+					</p:outputPanel>					
+				</h:panelGrid>
+				<p:separator />
+			</p:dataScroller>
+		</h:form>		
+	</ui:define>
+</ui:composition>

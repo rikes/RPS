@@ -1,0 +1,26 @@
+/* Bordas */
+form {
+    align-content: center;
+    
+    
+    
+}
+
+/* Estilo dos inputs */
+input[type=text] {
+    width: 50%;
+    padding: 12px 16px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+
+/* Adicione estilo do botão de login */
+button {
+    background-color: red;
+    color: white;
+    padding: 14px 18px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 15%;
+}

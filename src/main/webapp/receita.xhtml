@@ -1,0 +1,50 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	template="/templates/default/main.xhtml">
+	<ui:define name="content">
+
+
+		<h:form id="descricao">
+
+			<h2>
+				<h:outputText value="#{inicioBean.receita.nomeReceita}" />
+			</h2>
+
+			<p:separator />
+
+			<h:panelGrid id="panelPrincipal" columns="4">
+				<!-- 			<p:outputLabel> -->
+
+
+				<h:dataTable value="#{inicioBean.ingredientes}" var="ingrediente" > 
+		            <h:column>
+			            <f:facet name="header">Ingredientes</f:facet> 
+						<i class="fa fa-circle-thin fa-lg" aria-hidden="true">
+							<h:outputText value="#{ingrediente}" />
+						</i>
+					</h:column>
+				
+				</h:dataTable>
+				<p:separator />
+				<p:graphicImage value="#{inicioBean.receita.linkImagem}"
+					style="width:350px;height:350px" />
+			</h:panelGrid>
+			<h:dataTable value="#{inicioBean.modoPreparo}" var="preparo" > 
+	            <h:column>
+		            <f:facet name="header">Modo de Preparo</f:facet> 
+					<i class="fa fa-hand-o-right fa-lg" aria-hidden="true" >
+						<h:outputText value="#{preparo}" />
+					</i>
+				</h:column>
+				
+			</h:dataTable>
+			
+<!-- 			<h:outputText value="#{inicioBean.receita.modoPreparo}" /> -->
+			
+		</h:form>
+
+	</ui:define>
+</ui:composition>

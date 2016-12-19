@@ -1,0 +1,55 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	template="/templates/default/main.xhtml">
+	<ui:define name="content">
+	
+	
+	<h:form>
+                 
+    <p:growl id="growl" sticky="true" showDetail="true"/>
+ 
+    <p:wizard flowListener="#{loginMB.onFlowProcess}">
+        <p:tab id="Pessoa" title="Pessoa">
+            <p:panel header="Seus dados">
+                <p:messages />
+                <h:panelGrid columns="2">
+                    <h:outputText value="Nome: *" />
+                    <p:inputText value="#{loginMB.usuario.nome}" required="true" label="nome"/>
+ 
+                    <h:outputText value="Email: *" />
+                    <p:inputText value="#{loginMB.usuario.email}" required="true" label="email"/>
+ 
+                    <h:outputText value="Senha:* " />
+                    <p:password value="#{loginMB.usuario.senha}" />
+ 
+                    <h:outputText value="Pule: " />
+                    <h:selectBooleanCheckbox value="#{loginMB.skip}" />
+                </h:panelGrid>
+            </p:panel>
+        </p:tab>
+         
+         <p:tab id="confirm" title="Confirmation">
+            <p:panel header="Confirmation">
+                <h:panelGrid id="confirmation" columns="3" columnClasses="grid,grid,grid">
+                    <h:panelGrid columns="2" columnClasses="label, value">
+                        <h:outputText value="Nome: " />
+                        <h:outputText value="#{loginMB.usuario.nome}" styleClass="outputLabel"/>
+ 
+                        <h:outputText value="Email: " />
+                        <h:outputText value="#{loginMB.usuario.email}" styleClass="outputLabel"/>
+                    </h:panelGrid>
+                 </h:panelGrid>
+ 
+                <p:commandButton value="Submit" actionListener="#{loginMB.salvar}" update="growl" process="@this"/>
+            </p:panel>
+        </p:tab>
+    </p:wizard>
+ 
+</h:form>
+
+	
+	</ui:define>
+	</ui:composition>

@@ -48,7 +48,6 @@ public class Receita implements Serializable{
 	private SubCategoria subcategoria;
 	
 	
-	
 	@OneToMany(fetch = FetchType.EAGER)
 	@JoinColumn(name="IdUsuario")
 	private List<Usuario> usuarios;
@@ -91,6 +90,22 @@ public class Receita implements Serializable{
 
 	public void setLinkImagem(String linkImagem) {
 		this.linkImagem = linkImagem;
+	}
+
+	public SubCategoria getSubcategoria() {
+		return subcategoria;
+	}
+
+	public void setSubcategoria(SubCategoria subcategoria) {
+		this.subcategoria = subcategoria;
+	}
+
+	public List<Usuario> getUsuarios() {
+		return usuarios;
+	}
+
+	public void setUsuarios(List<Usuario> usuarios) {
+		this.usuarios = usuarios;
 	}
 	
 

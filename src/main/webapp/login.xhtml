@@ -1,0 +1,38 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	template="/templates/default/main.xhtml">
+	<ui:define name="content">
+
+		<h:form>
+			<h2>
+				<h:outputText value="Acesse seu perfil" />
+			</h2>
+			<p:separator />
+			<p:messages id="messages" />
+			
+			<h:panelGrid columns="2">
+				<p:outputLabel for="emailUsuario" value="Email Usuário:" />
+				<p:inputText id="emailUsuario" value="#{loginMB.usuario.email}" />
+
+				<p:outputLabel for="senha" value="Senha:" />
+				<p:password id="senha" value="#{loginMB.usuario.senha}" />
+
+				<h:commandButton value="Login"
+					action="#{loginMB.envia}" ajax="false" styleClass="button"
+					type="submit" id="button" style="width:90px;height:60px">
+				</h:commandButton>
+				
+				
+				<h:commandButton value="Cadastrar" action="#{loginMB.cadastro}"
+					 ajax="false" styleClass="cancelbtn"
+					type="submit" id="cadastro" style="width:90px;height:60px">
+				</h:commandButton>
+				
+
+			</h:panelGrid>
+		</h:form>
+	</ui:define>
+</ui:composition>
